@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Coffee Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="photos/BBlogo.png" type="icon/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="welcome-box" id="welcomeBox">
+        <div class="welcome-heading">Welcome to Bean Boutique Coffee Shop!</div>
+        <div class="welcome-discount">Get a discount on your first purchase by registering your email.</div>
+        <div class="welcome-subheading">You don't know how to register?</div>
+        <div class="welcome-description">Don't worry, click the user icon at the right side and you can easily register!</div>
+        <button class="welcome-close-btn" onclick="closeWelcomeBox()">Close</button>
+    </div>
+    <script>
+        // Function to show the welcome message after 1 second
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('welcomeBox').style.display = 'block';
+            }, 1000); // Delay of 1 second
+        };
+
+        // Function to close the welcome message box
+        function closeWelcomeBox() {
+            document.getElementById('welcomeBox').style.display = 'none';
+        }
+    </script>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <img src="photos/BBLogo.png" alt="Bean Boutique Logo">
+    </div>
+
+    <nav class="nav">
+        <div class="logo">
+            <h1>BeanBoutique</h1>
+        </div>
+        <ul id="menulist" class="nav-hover">
+            <li class="active"><a href="#" accesskey="1" title="Press ALT+1">Home</a></li>
+            <li class="dropdown">
+            <a href="productspage.html" accesskey="2" title="Press ALT+2">Products <span class="darrow">&#9662;</span></a>
+            <ul class="dropdown-content">
+                <li><a href="coffeebean.html" accesskey="3" title="Press ALT+3">Coffee Bean</a></li>
+                <li><a href="coffeepowder.html" accesskey="4" title="Press ALT+4">Coffee Powder</a></li>
+                <li><a href="brewingequipment.html" accesskey="5" title="Press ALT+5">Brewing Equipment</a></li>
+            </ul>
+        </li>
+            <li><a href="workshopandevent.html" accesskey="6" title="Press ALT+6">Workshops&Events</a></li>
+            <li><a href="shoppingcart.html" accesskey="7" title="Press ALT+7">Cart</a></li>
+            <li><a href="subscription.html" accesskey="8" title="Press ALT+8">Subscription</a></li>
+            <li><a href="aboutus.html" accesskey="9" title="Press ALT+9">About Us</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "300px";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <button id="scrollToTopBtn">&#8679;</button>
+    <!-- Floating User Icon -->
+<div class="user-icon" onclick="toggleForm()">
+  <img src="photos/user.png" alt="User Icon">
+</div>
+
+<!-- User Popup (Login and Register Forms) -->
+<div class="user-popup" id="userPopup">
+<div class="user-popup-content">
+    <span class="user-close" onclick="toggleForm()">&times;</span>
+<!-- Login Form -->
+<div class="user-form" id="userLoginForm">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Login</button>
+</div>
+    </form>
+    <p>If you don't have an account, <a href="#" onclick="toggleToRegisterForm()">Register here</a>.</p>
+</div>
+<!-- Register Form -->
+<div class="user-form" id="userRegisterForm" style="display:none;">
+    <h2>Register</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-new-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="email" id="user-new-email" name="email" required placeholder="Email">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-new-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Register</button>
+</div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="toggleToLoginForm()">Login here</a>.</p>
+</div>
+</div>
+</div>
+<!-- Bookmark Icon -->
+<div class="save-icon">
+  <img src="photos/bookmark.png" alt="Bookmark Icon" class="save-icon-img">
+</div>
+<!-- Save Popup Box -->
+<div class="save-popup">
+<div class="save-popup-content">
+    <span class="save-close-btn">&times;</span>
+    <h3 class="save-heading">You saved these items, wanna buy now?</h3>
+<div class="save-items">
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/arabicafruity.png" alt="Product 1" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Fruity Flavor</h4>
+    <p class="save-item-price">$15.87</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/arabicanutty.png" alt="Product 2" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Nutty</h4>
+    <p class="save-item-price">$15.57</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/RobustaChocolatey.png" alt="Product 3" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">Robusta Chocolatey</h4>
+    <p class="save-item-price">$14.32</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/white-mug.png" alt="Product 4" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">White Mug</h4>
+    <p class="save-item-price">$14.79</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/latte.jpg" alt="Product 5" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">Latte</h4>
+    <p class="save-item-price">$22.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/single-serve-coffee-maker.jpg" alt="Product 6" class="save-item-img">
+<div class="save-item-details">
+    <h4 class="save-item-name">Single Serve Coffee Maker</h4>
+    <p class="save-item-price">$15.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+   <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="photos/coffeebean.jpg" alt="Coffee Bean" title="coffee bean">
+        </div>
+        <div class="mySlides fade">
+            <img src="photos/machine.jpg" alt="Coffee Machine" title="coffee machine">
+        </div>
+        <div class="mySlides fade">
+            <img src="photos/coffeepowder.png" alt="Coffee Powder" title="coffee powder">
+        </div>
+        <div class="mySlides fade">
+            <img src="photos/coffee.jpg" alt="Coffee" title="coffee">
+        </div>
+        <div class="mySlides fade">
+            <img src="photos/peopleenjoycoffee.jpg" alt="People Enjoying Coffee" title="people enjoying coffee">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+   <!--review-->
+     <section class="reviews">
+  <h2 class="reviews-heading">What do our customers say</h2>
+  <div class="review-container">
+  <div class="review-box">
+      <img src="photos/customer1.jpg" alt="Customer 1" class="review-img">
+      <h3>Amelia Carter</h3>
+      <p>@Amelia Carter</p>
+      <p>
+        The coffee beans from Bean Boutique are exceptional! The aroma and freshness make every cup special.
+      </p>
+  </div>
+  <div class="review-box">
+      <img src="photos/customer2.png" alt="Customer 2" class="review-img">
+      <h3>Sophia Bennett</h3>
+      <p>@Sophia Bennett</p>
+      <p>
+        I love their coffee powder packs. They are perfect for my morning routine, and the flavor is unbeatable!
+      </p>
+    </div>
+    <div class="review-box">
+      <img src="photos/customer3.jpg" alt="Customer 3" class="review-img">
+      <h3>Lucas Turner</h3>
+      <p>@Lucas Turner</p>
+      <p>
+        The coffee machine I bought from Bean Boutique is amazing! It's easy to use and makes the best espresso.
+      </p>
+    </div>
+    <div class="review-box">
+      <img src="photos/customer4.jpg" alt="Customer 4" class="review-img">
+      <h3>Ethan Mitchell</h3>
+      <p>@Ethan Mitchell</p>
+      <p>
+        Bean Boutique has everything I need for my coffee addiction. Great quality and fast delivery!
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Best Selling Products -->
+<h2 class="bs-heading">
+    <img src="photos/bs-heading-icon.png" alt="Icon"> This Month's Best-Selling Items
+</h2>
+<div class="bs-container">
+    <div class="bs-row">
+    <div class="bs-item">
+    <img src="photos/ArabicaNutty.png" alt="Arabica Nutty Coffee Bean">
+    <div class="bs-info">
+    <h3>Arabica Nutty Coffee Bean</h3>
+    <p>Rich and aromatic flavor, perfect for coffee lovers.</p>
+    <span>$15.47</span>
+    <button class="bs-add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+    <div class="bs-item">
+    <img src="photos/espresso-machine.png" alt="Espresso Machine">
+    <div class="bs-info">
+    <h3>Espresso Machine</h3>
+    <p>Strong and bold taste with a caffeine kick.</p>
+    <span>$108.18</span>
+    <button class="bs-add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+    </div>
+    <div class="bs-row">
+    <div class="bs-item">
+    <img src="photos/ArabicaChocolatey.png" alt="Arabica Chocolatey Coffee Bean">
+    <div class="bs-info">
+    <h3>Arabica Chocolatey Coffee Bean</h3>
+    <p>Exotic and fruity, a unique coffee experience.</p>
+    <span>$18 / $25</span>
+    <button class="bs-add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+    <div class="bs-item">
+    <img src="photos/siphon-coffee-maker.png" alt="Siphon Coffee Maker">
+    <div class="bs-info">
+    <h3>Siphon Coffee Maker</h3>
+    <p>Distinct and tart flavor with complex notes.</p>
+    <span>$102.10</span>
+    <button class="bs-add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+    </div>
+</div>
+<section class="unique-taste-section">
+  <h2 class="unique-taste-heading">Unique Taste and Quality</h2>
+  <div class="unique-taste-items">
+    <!-- First Item -->
+    <div class="unique-taste-item">
+      <img src="photos/bean.jpg" alt="Coffee Bean" class="unique-taste-image">
+      <h3 class="unique-taste-title">Coffee Bean</h3>
+      <p class="unique-taste-text">Discover the richness of our handpicked coffee beans.</p>
+    </div>
+    <!-- Second Item -->
+    <div class="unique-taste-item">
+      <img src="photos/bean_to_powder.jpg" alt="Bean to Powder" class="unique-taste-image">
+      <h3 class="unique-taste-title">Bean to Coffee Powder</h3>
+      <p class="unique-taste-text">The journey of beans transforming into fine coffee powder.</p>
+    </div>
+    <!-- Third Item -->
+    <div class="unique-taste-item">
+      <img src="photos/coffee_powder.jpg" alt="Coffee Powder" class="unique-taste-image">
+      <h3 class="unique-taste-title">Coffee Powder</h3>
+      <p class="unique-taste-text">Our premium powder for brewing the perfect cup of coffee.</p>
+    </div>
+  </div>
+  <button class="unique-taste-button">Explore Our Coffee</button>
+</section>
+<section class="map-section">
+    <div class="map-left">
+        <h2 class="map-header">To Contact Us</h2>
+        <p class="map-description">
+            We're excited to hear from you! Whether you have questions about our coffee selection, need assistance with your order, or want to learn more about our upcoming events, we're here to help.
+        </p>
+        <p class="map-description">
+            You can reach us by phone, email, or simply visit us at our location in Mandalay, Myanmar. Our friendly team is ready to provide you with all the information you need. 
+        </p>
+        <div class="map-button-container">
+            <a href="contactus.html" class="map-button">Contact Us</a>
+        </div>
+    </div>
+    <div class="map-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7607.366823850725!2d96.08213007187727!3d21.97196434513124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c5da22315f184f%3A0xa7b031dbfcab85a4!2sMandalay%2C%20Myanmar!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+<!-- Footer Section -->
+    <footer class="footer">
+    <div class="footer-container">
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="aboutus.html">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-media">
+            <li><a href="#"><img src="photos/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="#"><img src="photos/instagram.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="#"><img src="photos/twitter.png" alt="Twitter"> Twitter</a></li>
+            <li><a href="#"><img src="photos/threads.png" alt="Threads"> Threads</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="javascript/script1.js"></script>
+    <script src="javascript/script3.js"></script>
+    <script src="javascript/script4.js"></script>
+</body>
+</html>

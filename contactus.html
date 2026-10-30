@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Coffee Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="photos/BBlogo.png" type="icon/png">
+</head>
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <img src="photos/BBLogo.png" alt="Bean Boutique Logo">
+    </div>
+    <nav class="nav">
+        <div class="logo">
+            <h1>BeanBoutique</h1>
+        </div>
+        <ul id="menulist" class="nav-hover">
+            <li><a href="index.html" accesskey="1" title="Press ALT+1">Home</a></li>
+            <li class="dropdown">
+            <a href="productspage.html" accesskey="2" title="Press ALT+2">Products <span class="darrow">&#9662;</span></a>
+            <ul class="dropdown-content">
+                <li><a href="CoffeeBean.html" accesskey="3" title="Press ALT+3">Coffee</a></li>
+                <li><a href="CoffeePowder.html" accesskey="4" title="Press ALT+4">Coffee Powder</a></li>
+                <li><a href="brewingequipment.html" accesskey="5" title="Press ALT+5">Brewing Equipment</a></li>
+            </ul>
+        </li>
+            <li><a href="workshopandevent.html" accesskey="6" title="Press ALT+6">Workshops&Events</a></li>
+            <li><a href="shoppingcart.html" accesskey="7" title="Press ALT+7">Cart</a></li>
+            <li><a href="subscription.html" accesskey="8" title="Press ALT+8">Subscription</a></li>
+            <li><a href="aboutus.html" accesskey="9" title="Press ALT+9">About Us</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "300px";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <!-- Floating User Icon -->
+<div class="user-icon" onclick="toggleForm()">
+  <img src="photos/user.png" alt="User Icon">
+</div>
+
+<!-- User Popup (Login and Register Forms) -->
+<div class="user-popup" id="userPopup">
+<div class="user-popup-content">
+    <span class="user-close" onclick="toggleForm()">&times;</span>
+<!-- Login Form -->
+<div class="user-form" id="userLoginForm">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Login</button>
+</div>
+    </form>
+    <p>If you don't have an account, <a href="#" onclick="toggleToRegisterForm()">Register here</a>.</p>
+</div>
+<!-- Register Form -->
+<div class="user-form" id="userRegisterForm" style="display:none;">
+    <h2>Register</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-new-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="email" id="user-new-email" name="email" required placeholder="Email">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-new-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Register</button>
+</div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="toggleToLoginForm()">Login here</a>.</p>
+</div>
+</div>
+</div>
+<!-- Bookmark Icon -->
+<div class="save-icon">
+  <img src="photos/bookmark.png" alt="Bookmark Icon" class="save-icon-img">
+</div>
+<!-- Save Popup Box -->
+<div class="save-popup">
+<div class="save-popup-content">
+    <span class="save-close-btn">&times;</span>
+    <h3 class="save-heading">You saved these items, wanna buy now?</h3>
+<div class="save-items">
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/arabicafruity.png" alt="Product 1" class="save-item-img" title="Arabica Fruity Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Fruity Flavor</h4>
+    <p class="save-item-price">$15.87</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/arabicanutty.png" alt="Product 2" class="save-item-img"  title="Arabica Nutty Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Nutty</h4>
+    <p class="save-item-price">$15.57</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/RobustaChocolatey.png" alt="Product 3" class="save-item-img" title="Robusta Chocolatey Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Robusta Chocolatey</h4>
+    <p class="save-item-price">$14.32</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/white-mug.png" alt="Product 4" class="save-item-img" title="White Mug">
+<div class="save-item-details">
+    <h4 class="save-item-name">White Mug</h4>
+    <p class="save-item-price">$14.79</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/latte.jpg" alt="Product 5" class="save-item-img" title="Latte">
+<div class="save-item-details">
+    <h4 class="save-item-name">Latte</h4>
+    <p class="save-item-price">$22.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/single-serve-coffee-maker.jpg" alt="Product 6" class="save-item-img" title="Single Serve Coffee Maker">
+<div class="save-item-details">
+    <h4 class="save-item-name">Single Serve Coffee Maker</h4>
+    <p class="save-item-price">$15.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="contact">
+    <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>Have any questions or need assistance? We're here to help! Feel free to reach out to us through the form below, or contact us directly via email or phone. We look forward to hearing from you!</p>
+        
+        <div class="contactus-container">
+            <div class="contact-info">
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="photos/map-icon.png" alt="Map Icon">
+                    </div>
+                    <div class="contact-text">
+                        <h3>Address</h3>
+                        <p>83x84 Mingalar Road,<br>Mandalay, Myanmar,<br>3445</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="photos/email-icon.png" alt="Email Icon">
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>beanboutique.bb@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="photos/phone-icon.png" alt="Phone Icon">
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone</h3>
+                        <p>+959-987654321</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="input-box">
+                        <input type="text" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea required="required"></textarea>
+                        <span>Message...</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" value="Send">
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer Section -->
+    <footer class="footer">
+    <div class="footer-container">
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="aboutus.html">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-media">
+            <li><a href="#"><img src="photos/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="#"><img src="photos/instagram.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="#"><img src="photos/twitter.png" alt="Twitter"> Twitter</a></li>
+            <li><a href="#"><img src="photos/threads.png" alt="Threads"> Threads</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="javascript/script1.js"></script>
+    <script src="javascript/script2.js"></script>
+    <script src="javascript/script3.js"></script>
+</body>
+</html>

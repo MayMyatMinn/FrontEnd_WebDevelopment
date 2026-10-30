@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Brewing Equipment</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="photos/BBlogo.png" type="icon/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <img src="photos/BBLogo.png" alt="Bean Boutique Logo">
+    </div>
+    <nav class="nav">
+    <div class="logo">
+        <h1>BeanBoutique</h1>
+    </div>
+        <ul id="menulist" class="nav-hover">
+        <li><a href="index.html" accesskey="1" title="Press ALT+1">Home</a></li>
+        <li class="dropdown active">
+        <a href="productspage.html" accesskey="2" title="Press ALT+2">Products <span class="darrow">&#9662;</span></a>
+        <ul class="dropdown-content">
+        <li><a href="coffeebean.html" accesskey="3" title="Press ALT+3">Coffee Bean</a></li>
+        <li><a href="coffeepowder.html" accesskey="4" title="Press ALT+4">Coffee Powder</a></li>
+        <li><a href="#" accesskey="5" title="Press ALT+5">Brewing Equipment</a></li>
+        </ul>
+        </li>
+        <li><a href="workshopandevent.html" accesskey="6" title="Press ALT+6">Workshops&Events</a></li>
+        <li><a href="shoppingcart.html" accesskey="7" title="Press ALT+7">Cart</a></li>
+        <li><a href="subscription.html" accesskey="8" title="Press ALT+8">Subscription</a></li>
+        <li><a href="aboutus.html" accesskey="9" title="Press ALT+9">About Us</a></li>
+        </ul>
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
+    </nav>
+    <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "300px";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <button id="scrollToTopBtn">&#8679;</button>
+    <div class="sidebar-container" id="sidebar">
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn">▶</button>
+    <div class="sidebar-menu">
+      <a href="coffeemugs.html" class="sidebar-menu-item">
+        <img src="photos/mug.png" alt="Coffee Mugs">
+        <span>Coffee Mugs</span>
+      </a>
+      <a href="#" class="sidebar-menu-item">
+        <img src="photos/filter.png" alt="Coffee Filters">
+        <span>Coffee Filters</span>
+      </a>
+      <a href="coffeescoops.html" class="sidebar-menu-item">
+        <img src="photos/scoop.png" alt="Coffee Scoops">
+        <span>Coffee Scoops</span>
+      </a>
+    </div>
+</div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = sidebar.classList.toggle('expanded');
+      toggleBtn.textContent = isExpanded ? '◀' : '▶';
+    });
+  </script>
+    <!-- Floating User Icon -->
+<div class="user-icon" onclick="toggleForm()">
+  <img src="photos/user.png" alt="User Icon">
+</div>
+
+<!-- User Popup (Login and Register Forms) -->
+<div class="user-popup" id="userPopup">
+<div class="user-popup-content">
+    <span class="user-close" onclick="toggleForm()">&times;</span>
+<!-- Login Form -->
+<div class="user-form" id="userLoginForm">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Login</button>
+</div>
+    </form>
+    <p>If you don't have an account, <a href="#" onclick="toggleToRegisterForm()">Register here</a>.</p>
+</div>
+<!-- Register Form -->
+<div class="user-form" id="userRegisterForm" style="display:none;">
+    <h2>Register</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-new-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="email" id="user-new-email" name="email" required placeholder="Email">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-new-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Register</button>
+</div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="toggleToLoginForm()">Login here</a>.</p>
+</div>
+</div>
+</div>
+<!-- Bookmark Icon -->
+<div class="save-icon">
+  <img src="photos/bookmark.png" alt="Bookmark Icon" class="save-icon-img">
+</div>
+<!-- Save Popup Box -->
+<div class="save-popup">
+<div class="save-popup-content">
+    <span class="save-close-btn">&times;</span>
+    <h3 class="save-heading">You saved these items, wanna buy now?</h3>
+<div class="save-items">
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/arabicafruity.png" alt="Product 1" class="save-item-img" title="Arabica Fruity Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Fruity Flavor</h4>
+    <p class="save-item-price">$15.87</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/arabicanutty.png" alt="Product 2" class="save-item-img"  title="Arabica Nutty Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Nutty</h4>
+    <p class="save-item-price">$15.57</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/RobustaChocolatey.png" alt="Product 3" class="save-item-img" title="Robusta Chocolatey Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Robusta Chocolatey</h4>
+    <p class="save-item-price">$14.32</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/white-mug.png" alt="Product 4" class="save-item-img" title="White Mug">
+<div class="save-item-details">
+    <h4 class="save-item-name">White Mug</h4>
+    <p class="save-item-price">$14.79</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/latte.jpg" alt="Product 5" class="save-item-img" title="Latte">
+<div class="save-item-details">
+    <h4 class="save-item-name">Latte</h4>
+    <p class="save-item-price">$22.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/single-serve-coffee-maker.jpg" alt="Product 6" class="save-item-img" title="Single Serve Coffee Maker">
+<div class="save-item-details">
+    <h4 class="save-item-name">Single Serve Coffee Maker</h4>
+    <p class="save-item-price">$15.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+    <!--Search-->
+    <div class="search-container">
+       <input type="text" id="searchInput" placeholder="Search...">
+       <i class="fa fa-search"></i>
+   </div>
+   <!-- Brewing Equipment -->
+  <section class="featured-products">
+  <h2>Brewing Equipment</h2>
+  <div class="product-grid">
+    <!--1-->
+    <div class="product-card" data-name="espressomachine">
+         <div class="new-ribbon">NEW</div> 
+         <div class="product-image">
+        <img src="photos/espresso-machine.png" alt="Espresso Machine">
+        </div>
+    <div class="how-to-use">
+        <h4>How to Use</h4>
+    <ul>
+        <li>Fill the water reservoir with fresh, cold water and ensure it’s properly attached.</li>
+        <li>Grind your coffee beans to a fine consistency and tamp them firmly in the portafilter.</li>
+        <li>Lock the portafilter, press the brew button, and enjoy your freshly brewed espresso!</li>
+    </ul>
+    </div>
+    <h3>Espresso Machine</h3>
+        <p class="product-description">Effortlessly brew rich, aromatic espresso with this compact, user-friendly machine.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.6k reviews</span>
+    </div>
+        <p>$108.18</p>
+        <p class="bought-last-month">2k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--2-->
+    <div class="product-card" data-name="drip">
+        <div class="new-ribbon">NEW</div> <!-- Ribbon -->
+        <div class="product-image">
+        <img src="photos/drip-coffee-maker.jpg" alt="Drip Coffee Maker">
+    </div>
+        <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+       <li>Fill the water reservoir with fresh, cold water.</li>
+       <li>Place a filter in the basket and add coffee grounds.</li>
+       <li>Turn on the coffee maker to start brewing.</li>
+    </ul>
+        </div>
+        <h3>Drip Coffee Maker</h3>
+        <p class="product-description">Brews smooth, flavorful coffee conveniently with easy-to-use drip technology.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.7k reviews</span>
+    </div>
+        <p>$67.89</p>
+        <p class="bought-last-month">3k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--3-->
+    <div class="product-card" data-name="single">
+        <div class="new-ribbon">NEW</div> <!-- Ribbon -->
+         <div class="product-image">
+        <img src="photos/single-serve-coffee-maker.jpg" alt="Single-Serve Coffee Maker">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+      <li>Fill the water reservoir with fresh, cold water.</li>
+      <li>Insert your coffee pod or ground coffee into the designated compartment.</li>
+      <li>Press the brew button to start the process.</li>
+    </ul>
+    </div>
+        <h3>Single-Serve Coffee Maker</h3>
+        <p class="product-description">Quickly brew single cups of coffee with ease and minimal cleanup.</p>
+        <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.1k reviews</span>
+    </div>
+        <p>$49.12</p>
+        <p class="bought-last-month">1k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--4-->
+    <div class="product-card" data-name="french">
+        <div class="new-ribbon">NEW</div> <!-- Ribbon -->
+         <div class="product-image">
+        <img src="photos/french-press.jpg" alt="French Press">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+      <li>Heat water to just below boiling (around 200°F or 93°C).</li>
+      <li>Add coarsely ground coffee to the French Press (about 1 tablespoon per 4 oz of water).</li>
+      <li>Place the lid on with the plunger pulled up and let it steep for 4 minutes.</li>
+    </ul>
+    </div>
+        <h3>French Press</h3>
+        <p class="product-description">Classic French press brews rich, full-bodied coffee with simple manual operation.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️☆☆</span>
+        <span>3.3k reviews</span>
+    </div>
+        <p>$56.99</p>
+        <p class="bought-last-month">2k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--5-->
+    <div class="product-card" data-name="aeropress">
+    <div class="new-ribbon">NEW</div> <!-- Ribbon -->
+    <div class="product-image">
+    <img src="photos/aeropress.jpg" alt="AeroPress">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+   <ul>
+      <li>Insert a paper filter into the AeroPress cap and rinse it with hot water.</li>
+      <li>Place the AeroPress on your mug and add ground coffee (1-2 scoops, depending on your preference).</li>
+      <li>Pour hot water (around 175°F or 80°C) into the chamber and stir for 10 seconds.</li>
+  </ul>
+    </div>
+        <h3>AeroPress</h3>
+        <p class="product-description">Portable AeroPress brews smooth, rich coffee quickly with versatile brewing options.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.1k reviews</span>
+    </div>
+        <p>$88.19</p>
+        <p class="bought-last-month">3k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--6-->
+    <div class="product-card" data-name="cold">
+    <div class="product-image">
+        <img src="photos/cold-brew-coffee-maker.jpg" alt="Cold Brew Coffee Maker">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+        <li>Add coarsely ground coffee to the filter or brewing chamber.</li>
+        <li>Pour cold water over the coffee grounds until fully saturated.</li>
+        <li>Refrigerate the coffee maker and let it steep for 12-24 hours.</li>
+    </ul>
+    </div>
+        <h3>Cold Brew Coffee Maker</h3>
+        <p class="product-description">Craft smooth, refreshing cold brew with ease, perfect for hot days.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.7k reviews</span>
+    </div>
+        <p>$98.30</p>
+        <p class="bought-last-month">3k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--7-->
+    <div class="product-card" data-name="percolator">
+         <div class="product-image">
+        <img src="photos/percolator.jpg" alt="Percolator">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+        <li>Fill the bottom chamber with cold water up to the desired level.</li>
+        <li>Add coarsely ground coffee to the filter basket.</li>
+        <li>Assemble the percolator and place it on the stovetop or plug it in if electric.</li>
+    </ul>
+    </div>
+        <h3>Percolator</h3>
+        <p class="product-description">Traditional percolator brews bold, aromatic coffee with a classic brewing method.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.8k reviews</span>
+    </div>
+        <p>$78.90</p>
+        <p class="bought-last-month">4k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+    <!--9-->
+    <div class="product-card" data-name="siphon">
+        <div class="product-image">
+        <img src="photos/siphon-coffee-maker.png" alt="Siphon Coffee Maker">
+    </div>
+    <div class="how-to-use">
+    <h4>How to Use</h4>
+    <ul>
+        <li>Fill the bottom chamber with water and place it over a heat source.</li>
+        <li>Insert the filter into the top chamber and secure it with the chain in the bottom tube.</li>
+        <li>As the water heats and moves to the top chamber, add ground coffee and stir gently.</li>
+    </ul>
+    </div>
+        <h3>Siphon Coffee Maker</h3>
+        <p class="product-description">Elegant siphon maker brews rich, aromatic coffee with a unique vacuum process.</p>
+    <div class="rating">
+        <span>⭐️⭐️⭐️⭐️☆</span>
+        <span>4.3k reviews</span>
+    </div>
+        <p>$102.10</p>
+        <p class="bought-last-month">3k+ people bought last month</p>
+        <a href="#" class="btn">Add to Cart</a>
+        <button class="favorite-btn" onclick="toggleFavorite(this)" title="Add to Favourite">
+        <span class="heart-icon">❤️</span>
+        </button>
+    </div>
+</div>
+</section>
+    <!-- Footer Section -->
+    <footer class="footer">
+    <div class="footer-container">
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="aboutus.html">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-media">
+            <li><a href="#"><img src="photos/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="#"><img src="photos/instagram.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="#"><img src="photos/twitter.png" alt="Twitter"> Twitter</a></li>
+            <li><a href="#"><img src="photos/threads.png" alt="Threads"> Threads</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="javascript/script1.js"></script>
+    <script src="javascript/script2.js"></script>
+    <script src="javascript/script3.js"></script>
+    <script src="javascript/script4.js"></script>
+</body>
+</html>

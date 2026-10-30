@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique About Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="photos/BBlogo.png" type="icon/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <img src="photos/BBLogo.png" alt="Bean Boutique Logo">
+    </div>
+    <nav class="nav">
+        <div class="logo">
+            <h1>BeanBoutique</h1>
+        </div>
+        <ul id="menulist" class="nav-hover">
+            <li><a href="index.html" accesskey="1" title="Press ALT+1">Home</a></li>
+            <li class="dropdown">
+            <a href="productspage.html" accesskey="2" title="Press ALT+2">Products</a>
+            <ul class="dropdown-content">
+                <li><a href="coffeebean.html" accesskey="3" title="Press ALT+3">Coffee Bean</a></li>
+                <li><a href="coffeepowder.html" accesskey="4" title="Press ALT+4">Coffee Powder</a></li>
+                <li><a href="brewingequipment.html" accesskey="5" title="Press ALT+5">Brewing Equipment</a></li>
+            </ul>
+        </li>
+            <li><a href="workshopandevent.html" accesskey="6" title="Press ALT+6">Workshops&Events</a></li>
+            <li><a href="shoppingcart.html" accesskey="7" title="Press ALT+7">Cart</a></li>
+            <li><a href="subscription.html" accesskey="8" title="Press ALT+8">Subscription</a></li>
+            <li class="active"><a href="#" accesskey="9" title="Press ALT+9">About Us</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "300px";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <button id="scrollToTopBtn">&#8679;</button>
+    <!-- Floating User Icon -->
+<div class="user-icon" onclick="toggleForm()">
+  <img src="photos/user.png" alt="User Icon">
+</div>
+
+<!-- User Popup (Login and Register Forms) -->
+<div class="user-popup" id="userPopup">
+<div class="user-popup-content">
+    <span class="user-close" onclick="toggleForm()">&times;</span>
+<!-- Login Form -->
+<div class="user-form" id="userLoginForm">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Login</button>
+</div>
+    </form>
+    <p>If you don't have an account, <a href="#" onclick="toggleToRegisterForm()">Register here</a>.</p>
+</div>
+<!-- Register Form -->
+<div class="user-form" id="userRegisterForm" style="display:none;">
+    <h2>Register</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-new-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="email" id="user-new-email" name="email" required placeholder="Email">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-new-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Register</button>
+</div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="toggleToLoginForm()">Login here</a>.</p>
+</div>
+</div>
+</div>
+<!-- Bookmark Icon -->
+<div class="save-icon">
+  <img src="photos/bookmark.png" alt="Bookmark Icon" class="save-icon-img">
+</div>
+<!-- Save Popup Box -->
+<div class="save-popup">
+<div class="save-popup-content">
+    <span class="save-close-btn">&times;</span>
+    <h3 class="save-heading">You saved these items, wanna buy now?</h3>
+<div class="save-items">
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/arabicafruity.png" alt="Product 1" class="save-item-img" title="Arabica Fruity Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Fruity Flavor</h4>
+    <p class="save-item-price">$15.87</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/arabicanutty.png" alt="Product 2" class="save-item-img"  title="Arabica Nutty Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Nutty</h4>
+    <p class="save-item-price">$15.57</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/RobustaChocolatey.png" alt="Product 3" class="save-item-img" title="Robusta Chocolatey Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Robusta Chocolatey</h4>
+    <p class="save-item-price">$14.32</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/white-mug.png" alt="Product 4" class="save-item-img" title="White Mug">
+<div class="save-item-details">
+    <h4 class="save-item-name">White Mug</h4>
+    <p class="save-item-price">$14.79</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/latte.jpg" alt="Product 5" class="save-item-img" title="Latte">
+<div class="save-item-details">
+    <h4 class="save-item-name">Latte</h4>
+    <p class="save-item-price">$22.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/single-serve-coffee-maker.jpg" alt="Product 6" class="save-item-img" title="Single Serve Coffee Maker">
+<div class="save-item-details">
+    <h4 class="save-item-name">Single Serve Coffee Maker</h4>
+    <p class="save-item-price">$15.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      <!-- About Us Section -->
+<section class="section">
+    <div class="text-container">
+        <h1>About Us</h1>
+        <p>At Bean Boutique Coffee Shop, we are passionate about coffee and dedicated to creating a unique experience for every customer. Founded by a dynamic family with a love for both tradition and innovation, we bring together the finest coffee beans from around the world to craft perfect blends that will captivate your senses. Our mission is to share the rich history and diverse flavors of coffee with every visitor, whether you're a casual coffee lover or a connoisseur. Join us on a journey of discovery, where each sip tells a story of excellence, quality, and the artistry of coffee making.</p>
+</div>
+    <div class="image-container">
+        <img src="photos/AboutCoffeeShop.jpg" alt="About Us" title="Bean Boutique">
+    </div>
+</section>
+<!-- Founder Story Section -->
+<section class="section">
+    <div class="image-container">
+        <img src="photos/founders.jpg" alt="Founder" title="Founders">
+    </div>
+    <div class="text-container">
+        <h2>Founder Story</h2>
+        <p>Founded by U Soe and Daw Thiri, Bean Boutique Coffee Shop is built on the foundation of a deep love for coffee and a shared desire to introduce the world to its rich flavors and aroma. Together, they have created a warm and welcoming space for coffee lovers, forging a community that continues to grow with every passing day. Their daughter, May Myat Minn, has been a driving force behind the shop's success as its CEO since 2020. A globally recognized IT professional, May Myat Minn has blended her passion for technology with her family's love for coffee, helping to elevate Bean Boutique to new heights. With a commitment to quality, innovation, and sustainability, the family’s vision continues to inspire customers and shape the future of coffee culture.</p>
+    </div>
+</section>
+<!-- CEO Story Section -->
+<section class="section">
+    <div class="text-container">
+        <h2>About Our CEO</h2>
+        <p>May Myat Minn, the CEO of Bean Boutique Coffee Shop since 2020, has played a pivotal role in shaping the future of our brand. A globally recognized IT professional, May is known for her innovative approach to blending technology with traditional business. With a deep passion for both coffee and technology, she has led Bean Boutique into a new era, introducing cutting-edge digital solutions that enhance our customer experience and streamline our operations. Her dedication to sustainability, creativity, and excellence has earned her widespread recognition in the IT world, while her leadership continues to inspire the entire Bean Boutique family. Under her guidance, we strive to be at the forefront of innovation, offering not only the finest coffee but also a tech-savvy and customer-centric experience.</p>
+</div>
+    <div class="image-container">
+        <img src="photos/ceo.jpg" alt="CEO" title="CEO May Myat Minn">
+    </div>
+</section>
+<!-- Founder Story Section -->
+<section class="section">
+    <div class="image-container">
+        <img src="photos/ourteam.jpeg" alt="Team" title="Our team">
+    </div>
+    <div class="text-container">
+        <h2>About Our Team</h2>
+        <p>At Bean Boutique Coffee Shop, our success is driven by a passionate and dedicated team that shares a love for coffee and a commitment to exceptional service. Each member of our team plays a vital role in delivering an unforgettable experience for our customers. From our skilled baristas who expertly craft each cup to our behind-the-scenes team ensuring smooth operations, everyone contributes to creating the warm, welcoming atmosphere that defines Bean Boutique. Together, we embrace the values of quality, creativity, and collaboration. Our diverse team brings unique perspectives and talents to the table, making us a close-knit family focused on providing outstanding coffee and customer service every day. We continue to grow, learn, and innovate, all while staying true to our mission of sharing the joy of coffee with the world.</p>
+</div>
+</section>
+
+<!-- We Have Section -->
+<section class="boxes-section">
+    <h2>We Have</h2>
+    <div class="boxes">
+        <div class="box">
+            <img src="photos/shop.png" alt="Global Shops">
+            <p>15+ Global Shops</p>
+        </div>
+        <div class="box">
+            <img src="photos/employee.png" alt="Employees">
+            <p>98,756+ Employees</p>
+        </div>
+        <div class="box">
+            <img src="photos/customers.png" alt="Customers">
+            <p>988,876,998+ Customers</p>
+        </div>
+    </div>
+</section>
+<div class="mvv-container">
+        <div class="mvv-box">
+            <img src="photos/mission.png" alt="Mission Icon" class="mvv-icon">
+            <div class="mvv-heading mvv-mission">Our Mission</div>
+            <p class="mvv-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+        </div>
+        <div class="mvv-box">
+            <img src="photos/vision.png" alt="Vision Icon" class="mvv-icon">
+            <div class="mvv-heading mvv-vision">Our Vision</div>
+            <p class="mvv-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+        </div>
+        <div class="mvv-box">
+            <img src="photos/value.png" alt="Values Icon" class="mvv-icon">
+            <div class="mvv-heading mvv-values">Our Values</div>
+            <p class="mvv-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+        </div>
+    </div>
+    <button id="chat-toggle">💬</button>
+
+    <div id="chat-container">
+        <div id="chat-header">
+            Coffee Chatbot
+            <button id="close-chat">❌</button>
+        </div>
+        <div id="chat-messages">
+            <div class="message bot">Hello! How can I assist you today?</div>
+            <div class="question-btn" onclick="sendQuestion('What coffee do you recommend?')">What coffee do you recommend?</div>
+            <div class="question-btn" onclick="sendQuestion('Tell me about Robusta coffee')">Tell me about Robusta coffee</div>
+            <div class="question-btn" onclick="sendQuestion('What is the best coffee for espresso?')">What is the best coffee for espresso?</div>
+            <div class="question-btn" onclick="sendQuestion('How do I order coffee online?')">How do I order coffee online?</div>
+            <div class="question-btn" onclick="sendQuestion('Do you sell coffee machines?')">Do you sell coffee machines?</div>
+        </div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your question...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const chatToggle = document.getElementById("chat-toggle");
+    const chatContainer = document.getElementById("chat-container");
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const sendButton = document.getElementById("send-button");
+    const closeChat = document.getElementById("close-chat");
+
+    // Open Chatbox
+    chatToggle.addEventListener("click", () => {
+        chatContainer.style.display = "block";
+    });
+
+    // Close Chatbox
+    closeChat.addEventListener("click", () => {
+        chatContainer.style.display = "none";
+    });
+
+    // Send Message with Button Click
+    sendButton.addEventListener("click", sendMessage);
+
+    // Send Message with Enter Key
+    chatInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevents new line in input
+            sendMessage();
+        }
+    });
+
+    // Function to Send User Message
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message === "") return;
+
+        displayMessage(message, "user");
+        chatInput.value = "";
+
+        setTimeout(() => {
+            const response = getBotResponse(message.toLowerCase());
+            displayMessage(response, "bot");
+        }, 1000);
+    }
+
+    // Function for Clickable Questions
+    function sendQuestion(question) {
+        displayMessage(question, "user");
+        setTimeout(() => {
+            const response = getBotResponse(question.toLowerCase());
+            displayMessage(response, "bot");
+        }, 1000);
+    }
+
+    // Function to Display Messages
+    function displayMessage(text, sender) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message", sender);
+        messageDiv.innerText = text;
+        chatMessages.appendChild(messageDiv);
+
+        // Auto-scroll to the latest message
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Function to Get Bot Response
+    function getBotResponse(userInput) {
+        const responses = {
+            "hello": "Hello! How can I assist you today?",
+            "hi": "Hi there! What would you like to know about coffee?",
+            "what coffee do you recommend?": "I recommend trying our Arabica blend, it's smooth and rich!",
+            "tell me about robusta coffee": "Robusta coffee has a strong, bold taste with high caffeine content.",
+            "what is the best coffee for espresso?": "Robusta and Arabica blends are great for espresso.",
+            "how do i order coffee online?": "You can order directly from our website on the **Products** page.",
+            "do you sell coffee machines?": "Yes! We sell high-quality coffee machines and accessories.",
+            "bye": "Goodbye! Have a great coffee day!",
+            "thank you": "You're welcome! Enjoy your coffee!"
+        };
+
+        return responses[userInput] || "I'm still learning! Ask me something else.";
+    }
+});
+</script>
+
+
+    <!--FAQ-->
+ <div class="faq-container">
+    <details>
+        <summary>
+            What is Bean Boutique Coffee Shop? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            Bean Boutique Coffee Shop is more than just a coffee shop. It is a unique destination for coffee enthusiasts who value high-quality coffee products. 
+            We provide premium coffee beans, coffee machines, and coffee powder packs to cater to both casual coffee drinkers and connoisseurs. 
+            Whether you're looking for a quick caffeine fix or want to explore unique flavors, our shop has everything you need to make your coffee experience extraordinary.
+        </p>
+    </details>
+    <details>
+        <summary>
+            Can I order online? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            Absolutely! We offer a user-friendly online shopping experience where you can browse and purchase our products at your convenience. 
+            Once you place your order, you can choose between home delivery or store pickup, whichever suits you best. 
+            Our secure payment methods and fast delivery ensure that your coffee essentials reach you in no time, so you can enjoy your favorite brews without stepping out.
+        </p>
+    </details>
+    <details>
+        <summary>
+            Do you offer subscriptions? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            Yes, we do! Our subscription plans are perfect for coffee lovers who want a consistent supply of fresh, high-quality coffee beans delivered directly to their doorsteps. 
+            You can choose from our monthly, bi-weekly, or even weekly subscriptions to ensure that you never run out of coffee. 
+            Subscribers also get exclusive access to limited-edition flavors and special discounts on our products.
+        </p>
+    </details>
+    <details>
+        <summary>
+            What types of coffee beans do you sell? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            We sell a diverse range of coffee beans, including Arabica, Robusta, Liberica, and Excelsa. 
+            Each type has its own unique flavor profile, catering to different tastes and preferences. 
+            From smooth and mild Arabica beans to bold and intense Robusta, we aim to provide a wide selection for every coffee enthusiast. 
+            Explore our collection to find your perfect cup!
+        </p>
+    </details>
+    <details>
+        <summary>
+            Do you provide brewing equipment? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            Yes, we provide a wide range of brewing equipment to suit all your coffee-making needs. 
+            From state-of-the-art coffee machines to classic French presses, grinders, filters, and scoops, our collection ensures that you can brew coffee just the way you like it. 
+            Our staff is always happy to assist you in selecting the right equipment based on your preferences and budget.
+        </p>
+    </details>
+    <details>
+        <summary>
+            What is the return policy? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            We aim to ensure customer satisfaction with every purchase. If you’re not happy with your order, you can return unopened items within 14 days of purchase for a full refund. 
+            However, please note that certain items, such as perishable goods and personalized orders, may not be eligible for returns. 
+            For more details, you can refer to our return policy page or contact our support team.
+        </p>
+    </details>
+    <details>
+        <summary>
+            Do you offer gift cards? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            Yes, we offer both digital and physical gift cards in various denominations. 
+            These make the perfect gift for any coffee lover in your life. 
+            Whether it’s for a birthday, anniversary, or just a thoughtful gesture, our gift cards allow the recipient to choose their favorite products from our store. 
+            Gift cards never expire, making them a timeless present.
+        </p>
+    </details>
+    <details>
+        <summary>
+            Where are you located? 
+            <span class="arrow"></span>
+        </summary>
+        <p>
+            We are located at [Your Address Here], nestled in the heart of the city to provide easy access for our customers. 
+            Our welcoming shop environment offers a cozy space for you to explore and experience our coffee products in person. 
+            Additionally, you can find us online at [Your Website URL], where we bring the same quality and care to our digital customers.
+        </p>
+    </details>
+</div>
+    <!-- Footer Section -->
+    <footer class="footer">
+    <div class="footer-container">
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-media">
+            <li><a href="#"><img src="photos/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="#"><img src="photos/instagram.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="#"><img src="photos/twitter.png" alt="Twitter"> Twitter</a></li>
+            <li><a href="#"><img src="photos/threads.png" alt="Threads"> Threads</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="javascript/script1.js"></script>
+    <script src="javascript/script3.js"></script>
+    <script src="javascript/script4.js"></script>
+</body>
+</html>

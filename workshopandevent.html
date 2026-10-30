@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Workshop and Event</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="photos/BBlogo.png" type="icon/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <img src="photos/BBLogo.png" alt="Bean Boutique Logo">
+    </div>
+    <nav class="nav">
+    <div class="logo">
+        <h1>BeanBoutique</h1>
+    </div>
+        <ul id="menulist" class="nav-hover">
+        <li><a href="index.html" accesskey="1" title="Press ALT + 1">Home
+        </a></li>
+        <li class="dropdown">
+        <a href="productspage.html" accesskey="2" title="Press ALT + 2">Products <span class="darrow">&#9662;</span></a>
+        <ul class="dropdown-content">
+        <li><a href="coffeebean.html" accesskey="3" title="Press ALT + 3">Coffee Bean</a></li>
+        <li><a href="coffeepowder.html" accesskey="4" title="Press ALT + 4">Coffee Powder</a></li>
+        <li><a href="brewingequipment.html" accesskey="5" title="Press ALT + 5">Brewing Equipment</a></li>
+        </ul>
+        </li>
+        <li class="active"><a href="#" accesskey="6" title="Press ALT + 6">Workshops&Events</a></li>
+        <li><a href="shoppingcart.html" accesskey="7" title="Press ALT + 7">Cart</a></li>
+        <li><a href="subscription.html" accesskey="8" title="Press ALT + 8">Subscription</a></li>
+        <li><a href="aboutus.html" accesskey="9" title="Press ALT + 9">About Us</a></li>
+        </ul>
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
+    </nav>
+    <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "300px";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <button id="scrollToTopBtn">&#8679;</button>
+    <!-- Floating User Icon -->
+<div class="user-icon" onclick="toggleForm()">
+  <img src="photos/user.png" alt="User Icon">
+</div>
+
+<!-- User Popup (Login and Register Forms) -->
+<div class="user-popup" id="userPopup">
+<div class="user-popup-content">
+    <span class="user-close" onclick="toggleForm()">&times;</span>
+<!-- Login Form -->
+<div class="user-form" id="userLoginForm">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Login</button>
+</div>
+    </form>
+    <p>If you don't have an account, <a href="#" onclick="toggleToRegisterForm()">Register here</a>.</p>
+</div>
+<!-- Register Form -->
+<div class="user-form" id="userRegisterForm" style="display:none;">
+    <h2>Register</h2>
+    <form action="#" method="POST">
+<div class="user-input-group">
+    <input type="text" id="user-new-username" name="username" required placeholder="Username">
+</div>
+<div class="user-input-group">
+    <input type="email" id="user-new-email" name="email" required placeholder="Email">
+</div>
+<div class="user-input-group">
+    <input type="password" id="user-new-password" name="password" required placeholder="Password">
+</div>
+<div class="user-input-group">
+    <button type="submit" class="user-btn">Register</button>
+</div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="toggleToLoginForm()">Login here</a>.</p>
+</div>
+</div>
+</div>
+<!-- Bookmark Icon -->
+<div class="save-icon">
+  <img src="photos/bookmark.png" alt="Bookmark Icon" class="save-icon-img">
+</div>
+<!-- Save Popup Box -->
+<div class="save-popup">
+<div class="save-popup-content">
+    <span class="save-close-btn">&times;</span>
+    <h3 class="save-heading">You saved these items, wanna buy now?</h3>
+<div class="save-items">
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/arabicafruity.png" alt="Product 1" class="save-item-img" title="Arabica Fruity Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Fruity Flavor</h4>
+    <p class="save-item-price">$15.87</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/arabicanutty.png" alt="Product 2" class="save-item-img"  title="Arabica Nutty Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Arabica Nutty</h4>
+    <p class="save-item-price">$15.57</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/RobustaChocolatey.png" alt="Product 3" class="save-item-img" title="Robusta Chocolatey Flavor">
+<div class="save-item-details">
+    <h4 class="save-item-name">Robusta Chocolatey</h4>
+    <p class="save-item-price">$14.32</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/white-mug.png" alt="Product 4" class="save-item-img" title="White Mug">
+<div class="save-item-details">
+    <h4 class="save-item-name">White Mug</h4>
+    <p class="save-item-price">$14.79</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="save-item-row">
+<div class="save-item">
+    <img src="photos/latte.jpg" alt="Product 5" class="save-item-img" title="Latte">
+<div class="save-item-details">
+    <h4 class="save-item-name">Latte</h4>
+    <p class="save-item-price">$22.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+<div class="save-item">
+    <img src="photos/single-serve-coffee-maker.jpg" alt="Product 6" class="save-item-img" title="Single Serve Coffee Maker">
+<div class="save-item-details">
+    <h4 class="save-item-name">Single Serve Coffee Maker</h4>
+    <p class="save-item-price">$15.99</p>
+    <button class="save-add-to-cart">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+    <div class="workshop-events-container">
+    <!-- Workshops Section -->
+    <div class="workshops">
+        <h2>Workshops</h2>
+    <div class="workshop-item">
+        <img src="photos/latteart.jpg" alt="Latte Art Workshop" title="latte art">
+    <div class="workshop-details">
+        <span class="calendar-date">Date: Feb 10, 2025</span>
+        <h3>Latte Art Workshop</h3>
+        <p>Unlock your creativity and learn the techniques of pouring beautiful latte art.</p>
+        <button class="join-button" onclick="openEventPopup()">Join Now</button>
+    </div>
+    </div>
+    <div class="workshop-item">
+        <img src="photos/coffee-brewing.jpg" alt="Brewing Classes" title="Brewing Classes">
+    <div class="workshop-details">
+        <span class="calendar-date">Date: Feb 15, 2025</span>
+        <h3>Brewing Classes</h3>
+        <p>Learn essential brewing techniques to create the perfect cup of coffee.</p>
+        <button class="join-button" onclick="openEventPopup()">Join Now</button>
+    </div>
+    </div>
+    </div>
+<!-- Divider Line -->
+    <div class="divider"></div>
+<!-- Events Section -->
+    <div class="events">
+        <h2>Events</h2>
+    <div class="event-item">
+        <img src="photos/coffee-tasting.jpg" alt="Coffee Tasting Sessions" title="Coffee Tasting Sessions">
+    <div class="event-details">
+        <span class="calendar-date">Date: Mar 5, 2025</span>
+        <h3>Coffee Tasting Sessions</h3>
+        <p>Explore unique flavors of our premium coffee beans.</p>
+        <button class="join-button" onclick="openEventPopup()">Join Now</button>
+    </div>
+    </div>
+    <div class="event-item">
+        <img src="photos/meet-the-roaster.jpg" alt="Meet the Roaster Event" title="Meet the Roaster Event">
+    <div class="event-details">
+        <span class="calendar-date">Date: Mar 12, 2025</span>
+        <h3>Meet the Roaster Event</h3>
+        <p>Discover the art of coffee roasting and meet the experts.</p>
+        <button class="join-button" onclick="openEventPopup()">Join Now</button>
+    </div>
+    </div>
+    </div>
+</div>
+<!-- Register Popup Form -->
+<div class="event-popup-overlay" id="eventPopupOverlay">
+    <div class="event-popup-form">
+        <span class="event-close-icon" onclick="closeEventPopup()">&times;</span>
+        <h2>Register for the Event</h2>
+        <form>
+            <label for="event-name">Name:</label>
+            <input type="text" id="event-name" placeholder="Enter your name" required>
+
+            <label for="event-email">Email:</label>
+            <input type="email" id="event-email" placeholder="Enter your email" required>
+
+            <label for="event-phone">Phone:</label>
+            <input type="tel" id="event-phone" placeholder="Enter your phone number" required>
+
+            <label for="event-comments">Comments:</label>
+            <textarea id="event-comments" placeholder="Any additional comments"></textarea>
+
+            <button type="submit" class="event-submit-btn">Register</button>
+        </form>
+    </div>
+</div>
+<div class="success-popup-overlay" id="successPopupOverlay">
+    <div class="success-popup">
+        <h2>Registration Successful!</h2>
+        <p>Thank you for registering. We look forward to seeing you at the event.</p>
+        <button onclick="closeSuccessPopup()">OK</button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Open Event Registration Popup
+    function openEventPopup() {
+        document.getElementById('eventPopupOverlay').style.display = 'flex';
+    }
+
+    // Close Event Registration Popup
+    function closeEventPopup() {
+        document.getElementById('eventPopupOverlay').style.display = 'none';
+    }
+
+    // Open Success Popup
+    function openSuccessPopup() {
+        document.getElementById('successPopupOverlay').style.display = 'flex';
+    }
+
+    // Close Success Popup
+    function closeSuccessPopup() {
+        document.getElementById('successPopupOverlay').style.display = 'none';
+    }
+
+    // Handle Form Submission
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".event-popup-form form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Close the event registration popup
+            closeEventPopup();
+
+            // Show the success popup
+            openSuccessPopup();
+        });
+    });
+</script>
+    <!--past events-->
+    <div class="video-gallery-intro">
+    <h2>Watch Our Past Events</h2>
+    <p>Relive the unforgettable moments from our previous events and get a glimpse of the excitement, passion, and creativity that make Bean Boutique Coffee Shop a unique experience.</p>
+    </div>
+    <div class="video-gallery">
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5p2UVc2h1p0?si=TszQsUpjqf1lF6Oe" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Latte Art Showcase</h3>
+        <p>Watch our talented baristas create stunning latte art during the event.</p>
+    </div>
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BywDOO99Ia0?si=mToh6soS5LXF4JvE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Coffee and Music Pairing</h3>
+        <p>Experience the perfect blend of specialty coffee and live acoustic music.</p>
+    </div>
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0enfWkzHYq0?si=-LcioPqGBEtyUtku" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Specialty Coffee Tasting</h3>
+        <p>Relive the moments of customers tasting our exclusive coffee blends.</p>
+    </div>
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VuqaEMx532U?si=ncSLWIh5KPPlRoBY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Barista Workshop</h3>
+        <p>A look at our interactive workshop where participants learned brewing techniques.</p>
+    </div>
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UP83EKPMKGM?si=e09UxMOEoKfHLYs1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Seasonal Coffee Launch</h3>
+        <p>Unveiling our exclusive seasonal coffee blends, crafted for the season.</p>
+    </div>
+    <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JoPhwZ3tlNs?si=GcCoNi-e3jCLekZR" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Event Highlights</h3>
+        <p>A recap of the best moments from our Bean Boutique Coffee Shop event.</p>
+    </div>
+</div>
+<!-- Footer Section -->
+    <footer class="footer">
+    <div class="footer-container">
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Customer Service</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="aboutus.html">FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul class="social-media">
+            <li><a href="#"><img src="photos/facebook.png" alt="Facebook"> Facebook</a></li>
+            <li><a href="#"><img src="photos/instagram.png" alt="Instagram"> Instagram</a></li>
+            <li><a href="#"><img src="photos/twitter.png" alt="Twitter"> Twitter</a></li>
+            <li><a href="#"><img src="photos/threads.png" alt="Threads"> Threads</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="javascript/script1.js"></script>
+    <script src="javascript/script3.js"></script>
+    <script src="javascript/script4.js"></script>
+</body>
+</html>
